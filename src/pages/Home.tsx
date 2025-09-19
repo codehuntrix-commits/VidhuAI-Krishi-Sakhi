@@ -105,7 +105,7 @@ const Home = () => {
       >
         <div className="mb-6">
           <h1 className="text-2xl lg:text-3xl font-bold text-foreground">
-            👋 Namaskaram, Rajanetta!
+            👋 Namaskaram, Riyaz!
           </h1>
           <p className="text-foreground/70 text-sm lg:text-base">
             {new Date().toLocaleDateString('en-IN', { 
