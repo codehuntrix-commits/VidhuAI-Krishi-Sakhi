@@ -29,14 +29,14 @@ const Profile = () => {
   const navigate = useNavigate();
   
   const farmerData = {
-    name: 'Rajan K Nair',
-    age: 52,
+    name: 'Riyaz',
+    age: 30,
     location: 'Kottayam, Kerala',
     phone: '+91 98765 43210',
-    email: 'rajan.farmer@gmail.com',
+    email: 'riyaz@gmail.com',
     landSize: '2.5 acres',
     crops: ['Rice', 'Coconut', 'Pepper', 'Rubber'],
-    experience: '25 years',
+    experience: '10 years',
     joinDate: 'Sept 2025'
   };
 
