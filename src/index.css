@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* VithuAI Krishi Sakhi Design System - Glassmorphism + Neumorphism
+All colors MUST be HSL. Farm-first color palette with Malayalam support.
+*/
+
+
+@layer base {
+  :root {
+    /* Core Farm Colors */
+    --farm-green: 140 51% 45%; /* Primary Green #3BA55C */
+    --farm-green-light: 140 51% 65%;
+    --farm-green-dark: 140 51% 35%;
+    
+    --earth-brown: 30 49% 28%; /* Secondary Earth Brown #6B4423 */
+    --earth-brown-light: 30 49% 48%;
+    
+    --harvest-yellow: 48 100% 70%; /* Accent Yellow #FFD966 */
+    --harvest-yellow-light: 48 100% 80%;
+    
+    --orange: 25 95% 63%; /* Medium Orange #FF7F3F */
+    --orange-light: 25 95% 73%;
+    
+    --sky-blue: 207 73% 57%; /* Sky Blue #3C9EE7 */
+    --sky-blue-light: 207 73% 77%;
+    
+    /* Glassmorphism Background System */
+    --background: 0 0% 100%;
+    --background-secondary: 140 20% 98%;
+    --background-gradient-start: 140 30% 96%;
+    --background-gradient-end: 48 40% 98%;
+    
+    --foreground: 30 49% 15%;
+    --foreground-muted: 30 20% 40%;
+
+    /* Glass Card System */
+    --glass-card: 0 0% 100% / 0.8;
+    --glass-card-border: 140 51% 45% / 0.2;
+    --glass-card-shadow: 140 51% 35% / 0.1;
+    
+    --card: 0 0% 100% / 0.9;
+    --card-foreground: 30 49% 15%;
+
+    --popover: 0 0% 100% / 0.95;
+    --popover-foreground: 30 49% 15%;
+
+    /* Primary System - Farm Green */
+    --primary: 140 51% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 140 51% 65% / 0.4;
+
+    /* Secondary System - Earth Brown */
+    --secondary: 30 49% 28%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 30 49% 94%;
+
+    /* Muted System */
+    --muted: 140 20% 95%;
+    --muted-foreground: 30 20% 45%;
+
+    /* Accent System - Harvest Yellow */
+    --accent: 48 100% 70%;
+    --accent-foreground: 30 49% 15%;
+
+    /* Status Colors */
+    --success: 140 51% 45%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 48 100% 70%;
+    --warning-foreground: 30 49% 15%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* UI Elements */
+    --border: 140 20% 90%;
+    --input: 0 0% 100% / 0.8;
+    --ring: 140 51% 45%;
+
+    /* Border Radius */
+    --radius: 1rem;
+    --radius-sm: 0.75rem;
+    --radius-lg: 1.5rem;
+    --radius-xl: 2rem;
+    
+    /* Shadows & Glows */
+    --shadow-neumorphic: 0 8px 32px hsl(140 51% 35% / 0.1), inset 0 1px 0 hsl(0 0% 100% / 0.6);
+    --shadow-glass: 0 8px 32px hsl(140 51% 35% / 0.12);
+    --glow-primary: 0 0 40px hsl(140 51% 65% / 0.4);
+    --glow-accent: 0 0 30px hsl(48 100% 70% / 0.3);
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(140 51% 45%), hsl(140 51% 65%));
+    --gradient-secondary: linear-gradient(135deg, hsl(30 49% 28%), hsl(30 49% 48%));
+    --gradient-accent: linear-gradient(135deg, hsl(48 100% 70%), hsl(48 100% 80%));
+    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.9), hsl(140 20% 98% / 0.6));
+    --gradient-hero: linear-gradient(135deg, hsl(140 30% 96%), hsl(48 40% 98%));
+    
+    /* Animation Timing */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-fade: opacity 0.2s ease-in-out;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode not implemented for farming context */
+    --background: 0 0% 100%;
+    --foreground: 30 49% 15%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins antialiased;
+    background: linear-gradient(135deg, hsl(var(--background-gradient-start)), hsl(var(--background-gradient-end)));
+    min-height: 100vh;
+  }
+  
+  /* Malayalam Font Support */
+  .font-malayalam {
+    font-family: 'Poppins', 'Malayalam Sangam MN', 'Noto Sans Malayalam', sans-serif;
+  }
+}
+
+@layer components {
+  /* Glassmorphism Components */
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-[0_8px_32px_hsl(var(--shadow-glass))];
+  }
+  
+  .glass-card-hover {
+    @apply glass-card hover:bg-white/90 hover:border-white/30 hover:shadow-[0_12px_40px_hsl(var(--shadow-glass))] transition-all duration-300;
+  }
+  
+  /* Neumorphic Buttons */
+  .neuro-button {
+    @apply bg-white/90 backdrop-blur-md border border-white/30 shadow-[8px_8px_16px_hsl(var(--glass-card-shadow)),-8px_-8px_16px_hsl(0_0%_100%/0.8)] active:shadow-[inset_4px_4px_8px_hsl(var(--glass-card-shadow)),inset_-4px_-4px_8px_hsl(0_0%_100%/0.8)];
+  }
+  
+  /* Glowing Mic Button */
+  .mic-glow {
+    @apply shadow-[0_0_40px_hsl(var(--primary-glow))] animate-pulse;
+  }
+  
+  /* Farm-themed Gradients */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  /* Custom Animations */
+  .animate-fade-slide-up {
+    animation: fade-slide-up 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+  }
+  
+  .animate-bounce-in {
+    animation: bounce-in 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
+  }
+  
+  .animate-tilt-hover {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .animate-tilt-hover:hover {
+    transform: rotateY(5deg) rotateX(5deg) scale(1.02);
+  }
+}
+
+@layer utilities {
+  .text-shadow-soft {
+    text-shadow: 0 2px 4px hsl(0 0% 0% / 0.1);
+  }
+}
+
+@keyframes fade-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
