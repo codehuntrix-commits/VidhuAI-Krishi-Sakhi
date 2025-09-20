@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
+import { MicButton } from '@/components/MicButton';
 import { 
   Mic, 
   Camera, 
@@ -265,6 +266,7 @@ const Onboarding = () => {
             Step {step + 1} of {steps.length}
           </p>
         </div>
+
 
         <Card className="glass-card p-8 text-center">
           {/* Step 1: Welcome */}
@@ -1011,7 +1013,11 @@ const Onboarding = () => {
             </motion.div>
           )}
         </Card>
-        
+        <div className="flex justify-center items-center">
+          <div className="flex-shrink-0 mx-2">
+            <MicButton />
+          </div>
+        </div>
         {step > 0 && step < steps.length - 1 && (
           <Button
             variant="ghost" 
