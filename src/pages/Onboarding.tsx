@@ -506,7 +506,19 @@ const Onboarding = () => {
                   </div>
                 </div>
                 
-  
+                <div>
+                  <label className="block text-sm font-medium mb-2">Whatsapp Number</label>
+                  <div className="relative">
+                    <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-foreground/50" />
+                    <Input 
+                      type="number"
+                      placeholder="Enter your number"
+                      value={profile.phone}
+                      onChange={(e) => setProfile(prev => ({ ...prev, phone: e.target.value }))}
+                      className="pl-10"
+                    />
+                  </div>
+                </div>
                 
                 <div>
                   <label className="block text-sm font-medium mb-2">Location</label>
