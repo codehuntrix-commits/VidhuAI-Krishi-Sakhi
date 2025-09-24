@@ -118,7 +118,7 @@ const Index = () => {
             onClick={() => navigate('/onboarding')}
           >
             <Rocket className="w-4 h-4 mr-2" />
-            Sign Up / Create Account
+            Create Account
           </Button>
         </div>
       </motion.header>
