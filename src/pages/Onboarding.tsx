@@ -570,7 +570,7 @@ const Onboarding = () => {
               <div className="space-y-4">
                 <div className="text-left">
                   <label className="block text-sm font-medium mb-2">
-                    Land Size: {profile.landSize} acres (max 30)
+                    Total Land Size: {profile.landSize} acres (max 30)
                   </label>
                   <input
                     type="range"
