@@ -350,7 +350,7 @@ const Onboarding = () => {
                   size="lg"
                 >
                   <span className="text-xl">🇮🇳</span>
-                  Hindi (हिंदी)
+                  Tamil (தமிழ்)
                 </Button>
               </div>
               {language && (
