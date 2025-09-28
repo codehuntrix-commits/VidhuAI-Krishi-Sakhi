@@ -17,7 +17,8 @@ import {
   TrendingUp,
   Leaf,
   AlertTriangle,
-  Bug
+  Bug,
+  ShoppingCart
 } from 'lucide-react';
 import { BottomNav } from '@/components/BottomNav';
 import { TopNav } from '@/components/TopNav';
@@ -56,18 +57,18 @@ const Home = () => {
       path: '/advisory'
     },
     {
-      title: 'Crop Health',
-      subtitle: 'Monitor crops',
-      icon: Activity, 
-      color: 'bg-emerald-500',
-      path: '/crop-soil-management'
-    },
-    {
       title: 'Schemes',
       subtitle: 'Government schemes',
       icon: Bell,
       color: 'bg-harvest-yellow',
       path: '/schemes'
+    },
+    {
+      title: 'Marketplace',
+      subtitle: 'Buy & sell',
+      icon: ShoppingCart,
+      color: 'bg-orange',
+      path: '/marketplace'
     }
   ];
 
