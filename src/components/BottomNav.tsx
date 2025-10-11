@@ -1,22 +1,24 @@
 import { motion } from 'framer-motion';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { BookOpen, Brain, Bell, Leaf, Mic } from 'lucide-react';
+import { BookOpen, Brain, HeadphonesIcon, Leaf } from 'lucide-react';
 import { MicButton } from '@/components/MicButton';
-
-const leftItems = [
-  { id: 'diary', label: 'Diary', icon: BookOpen, path: '/diary' },
-  { id: 'advisory', label: 'Advisory', icon: Brain, path: '/advisory' }
-];
-
-const rightItems = [
-  { id: 'crop-soil', label: 'Crop Health', icon: Leaf, path: '/crop-soil-management' },
-  { id: 'alerts', label: 'Alerts', icon: Bell, path: '/reminders' }
-];
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export const BottomNav = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const { t } = useLanguage();
   const currentPath = location.pathname;
+
+  const leftItems = [
+    { id: 'diary', label: t('farm_diary'), icon: BookOpen, path: '/diary' },
+    { id: 'advisory', label: t('personalized_advisory'), icon: Brain, path: '/advisory' }
+  ];
+
+  const rightItems = [
+    { id: 'crop-soil', label: t('crop_health'), icon: Leaf, path: '/crop-soil-management' },
+    { id: 'help-support', label: t('help_support'), icon: HeadphonesIcon, path: '/help-support' }
+  ];
 
   return (
     <motion.div
