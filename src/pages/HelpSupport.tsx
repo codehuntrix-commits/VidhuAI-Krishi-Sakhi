@@ -70,6 +70,7 @@ const HelpSupport = () => {
     <div className="min-h-screen gradient-hero pb-20 pt-24">
       <TopNav />
       
+      <div className="lg:max-w-6xl lg:mx-auto px-4 md:px-6 mt-6">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -242,7 +243,7 @@ const HelpSupport = () => {
           </Card>
         </div>
       </motion.div>
-
+        </div>
       <BottomNav />
     </div>
   );
